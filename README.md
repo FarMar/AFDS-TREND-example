@@ -15,4 +15,4 @@ ___
 * Push to Github in preparation for running on pearcey
 * SSH into pearcey, navigate to `/flush1/far218` and `git clone`
 * `rsync -vh dir/where/files/are ./the/data/structure` to copy the raw files to the appropriate folder
-* Write / modify  
+* Write / modify bash script to extract metadata from the .fastq files
