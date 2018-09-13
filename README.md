@@ -7,7 +7,7 @@ A more helpful Markdown cheat sheet is available [here] (https://github.com/adam
 ___
 
 
-##Setting up the workplace environment
+## Setting up the workplace environment
 * Start new project in Github
 * `git clone` the github project to home directory
 * Get started on the `README.md`
@@ -18,5 +18,5 @@ ___
 * Write / modify bash script to extract metadata from the .fastq files
 
 ---
-##Directory structure
+## Directory structure
 To have an ordered workspace that is clean, easy to navigate, and ensures that code changes etc. are tracked whilst not trying to commit large data or output files to Github, it is important that a standard working structure of directories is created. This can be done in a simple bash script. 
