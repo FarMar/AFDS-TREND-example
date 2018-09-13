@@ -14,5 +14,9 @@ ___
 * Make a bash script to build a sensible folder structure, called `dir.sh`, and add a `.gitignore` file which excludes the data directory, images, zips, and other files that shouldn't be tracked in github
 * Push to Github in preparation for running on pearcey
 * SSH into pearcey, navigate to `/flush1/far218` and `git clone`
-* `rsync -vh dir/where/files/are ./the/data/structure` to copy the raw files to the appropriate folder
+* `rsync -vhra dir/where/files/are/ ./the/data/structure/` to copy the raw files to the appropriate folder
 * Write / modify bash script to extract metadata from the .fastq files
+
+---
+##Directory structure
+To have an ordered workspace that is clean, easy to navigate, and ensures that code changes etc. are tracked whilst not trying to commit large data or output files to Github, it is important that a standard working structure of directories is created. This can be done in a simple bash script. 
