@@ -21,10 +21,30 @@ ___
 * `rsync -vhra dir/where/files/are/ ./the/data/structure/` to copy the raw files to the appropriate folder
 * Write / modify bash script to extract metadata from the .fastq files
 
-___
 
-## Directory structure
+
+### Directory structure
 To have an ordered workspace that is clean, easy to navigate, and ensures that code changes etc. are tracked whilst not trying to commit large data or output files to Github, it is important that a standard working structure of directories is created. This can be done in a simple bash script. 
 
+```sh
+#!/bin/bash
 
+#***************************************************************#
+#              makes directory structure                        #
+#***************************************************************#
+
+# should be run from the root of your working directory
+
+mkdir data/
+mkdir data/raw/
+mkdir data/working/
+mkdir data/processed
+mkdir scripts/
+mkdir outputs/
+```
+When written and saved, simply run `sh dir.sh`
+___
+
+## Pre-processing of data
+A lot of technical data on the quality of the molecular data, and the factors within the run (e.g. lanes, etc) can be gleaned by some relatively simple steps. First of these is to extract the metadata. for MiSeq data,  
 
