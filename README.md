@@ -6,6 +6,10 @@ A more helpful Markdown cheat sheet is available [here] (https://github.com/adam
 
 ___
 
+## Data management plan
+It's much easier to make a start on this and consider how you will be making your data available in the longer term. The [data management plan](https://confluence.csiro.au/display/RDM/Research+Data+Planner) provides a comprehensive set of concepts that require consideration, including metadata formats, licenses and inherited licenses. Default *home* for the raw and processed data is likely [CSIRO's Data Access Portal](https://data.csiro.au/dap/home?execution=e1s1), with workflow deposited in [Github](https://github.com/).
+
+___
 
 ## Setting up the workplace environment
 * Start new project in Github
@@ -17,6 +21,10 @@ ___
 * `rsync -vhra dir/where/files/are/ ./the/data/structure/` to copy the raw files to the appropriate folder
 * Write / modify bash script to extract metadata from the .fastq files
 
----
+___
+
 ## Directory structure
 To have an ordered workspace that is clean, easy to navigate, and ensures that code changes etc. are tracked whilst not trying to commit large data or output files to Github, it is important that a standard working structure of directories is created. This can be done in a simple bash script. 
+
+
+
