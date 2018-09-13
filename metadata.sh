@@ -4,10 +4,17 @@
 #              extracts metadata from MiSeq fastq files         #
 #***************************************************************#
 
-$(echo -e "instrument\trun_num\tflowcell_id\tlane\ttile\tx-pos\ty-pos\t"
-for file in data/raw/*.fastq; do echo -ne "${file}\t"
-head -1 $file | cut -d':' -f1-7 | tr ':' '\t' 
-done) > metadata.tsv
+
+(echo -e "file\tinstrument\trun_num\tflowcell_id\tlane\ttile\tx-pos\ty-pos\tread\tis_filtered\tctrl_num\tsample_num"
+for file in data/raw/*.fastq
+do
+	echo -ne "${file}\t"
+	head -1 $file | 
+	sed -E 's/ /:/' | 
+	cut -d ':' -f1-11 | 
+	tr ':' '\t'
+done
+) > metadata.tsv
 
 
 # some help
