@@ -38,7 +38,7 @@ To have an ordered workspace that is clean, easy to navigate, and ensures that c
 mkdir data/
 mkdir data/raw/
 mkdir data/working/
-mkdir data/processed
+mkdir data/processed/
 mkdir scripts/
 mkdir outputs/
 ```
@@ -46,5 +46,26 @@ When written and saved, simply run `sh dir.sh`
 ___
 
 ## Pre-processing of data
-A lot of technical data on the quality of the molecular data, and the factors within the run (e.g. lanes, etc) can be gleaned by some relatively simple steps. First of these is to extract the metadata. for MiSeq data,  
+A lot of technical data on the quality of the molecular data, and the factors within the run (e.g. lanes, etc) can be gleaned by some relatively simple steps. First of these is to extract the metadata. for MiSeq data. At the most basic level, metadata can be extracted from the first row of the sequence files. A short script to do this is displayed below:
+
+```
+#!/bin/bash
+
+#***************************************************************#
+#              extracts metadata from MiSeq fastq files         #
+#***************************************************************#
+
+
+(echo -e "file\tinstrument\trun_num\tflowcell_id\tlane\ttile\tx-pos\ty-pos\tread\tis_filtered\tctrl_num\tsample_num"
+for file in data/raw/*.fastq
+do
+        echo -ne "${file}\t"
+        head -1 $file |
+        grep -E '^@' |
+        sed -E 's/ /:/' | 
+        cut -d ':' -f1-11 | 
+        tr ':' '\t'
+done | sort -V) > data/working/metadata_raw.tsv
+```
+
 
