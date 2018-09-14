@@ -9,8 +9,9 @@
 mkdir data/
 mkdir data/raw/
 mkdir data/working/
-mkdir data/processed/
+mkdir data/processed
 mkdir scripts/
 mkdir outputs/
+mkdir logs/
 
 

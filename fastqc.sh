@@ -13,12 +13,12 @@
 #SBATCH --mem=4gb
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=mark.farrell@csiro.au
-#SBATCH --output=Logs/fastqc_%A.out
+#SBATCH --output=logs/fastqc_%A.out
 #SBATCH --array=0-11
 
 #----------------------project variables------------------------# 
-IN_DIR=/flush1/far218/projectdir/data/raw/
-OUT_DIR=/flush1/far218/projectdir/data/FastQC/
+IN_DIR=/flush1/far218/AFDS-TREND-example/data/raw/
+OUT_DIR=/flush1/far218/AFDS-TREND-example/data/working/FastQC/
 
 #---------------------------------------------------------------#
 
